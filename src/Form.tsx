@@ -1,28 +1,35 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 type FormProperties = {
-  onSubmit: (name:string) => unknown;
+// define a default "text" to type but still allow to change it for number, for example
+  type: string;
+  id: string;
+  name: string;
+  label: string;
+  placeholder: string;
+  onSubmit: (name: string) => unknown;
 };
 
+const Form: React.FC<FormProperties> = (props: FormProperties): JSX.Element => {
+  const [value, setValue] = useState("");
 
-const Form: React.FC <FormProperties> = (props: FormProperties): JSX.Element => {
-    const [value, setValue] = useState("");
-
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        props.onSubmit(value)
-    }
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    props.onSubmit(value);
+    setValue("");
+  };
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        <label>{props.label}</label>
         <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="name"
+          type={props.type}
+          id={props.id}
+          name={props.name}
+          placeholder={props.placeholder}
           required
           value={value}
-          onChange={(event => setValue(event.target.value))}
+          onChange={(event) => setValue(event.target.value)}
         />
         <button type="submit">Submit</button>
       </form>
