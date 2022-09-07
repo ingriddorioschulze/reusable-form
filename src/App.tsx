@@ -9,34 +9,40 @@ const AppContainer = styled.div`
   padding: 0;
   display: flex;
   flex-direction: column;
-`
+`;
 const HeaderStyled = styled.header`
   display: flex;
   font-size: 30px;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-`
+`;
 const FormContainer = styled.div`
   margin-top: 30px;
-`
+`;
 
 const App: React.FC = (): JSX.Element => {
   return (
     <AppContainer>
       <HeaderStyled>Reusable Form</HeaderStyled>
       <FormContainer>
-        <Form onSubmit={() => alert("Form submitted!")}>
+        <Form
+          onSubmit={(value) =>
+            alert(
+              `Form submitted with the values: ${value.firstName},${value.lastName},${value.email}`
+            )
+          }
+        >
           <FormInput
             type="text"
             id="firstName"
-            name="First Name"
+            name="firstName"
             label="First Name: "
             placeholder="Enter your first name"
           />
           <FormInput
             type="text"
             id="lastName"
-            name="Last Name"
+            name="lastName"
             label="Last Name: "
             placeholder="Enter your last name"
           />
