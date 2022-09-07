@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# about
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Reusable and generic form component.
+# technologies
 
-## Available Scripts
+- React
+- Typescript
+- styled components
+- React Testing Library
 
-In the project directory, you can run:
+# instructions
 
-### `npm start`
+1.  clone repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    ```bash
+    git clone https://github.com/ingriddorioschulze/reusable-form
+    cd reusable-form
+    ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2.  install dependencies
 
-### `npm test`
+    ```bash
+    npm install
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3.  start the application
 
-### `npm run build`
+    ```bash
+    npm start
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4.  run the tests
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    npm test
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# description
 
-### `npm run eject`
+- The form manages its own state being just rendered by App.
+- A working use case for this App would be a registration form with first name, last name, email and password fields and/or a login form with email and password.
+- The form and input components were split to easily add/remove input fields.
+- Using styled-components is also easy to adapt the styling according to different parts of the application.
+- Using props with specific types enable the inputs configuration. E.g. change the input name or placeholder passsing a string to the Form component.
+- A solution for the communication between Form and FormInput was to use ContextApi, so App would not need to be bothered about the onChange.
+- An idea to manage the data being changed from different input fields was using a Record in Typescript.
+- The tests cover that the App component renders the form and that the form is submitted with the values typed in the input field.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# api
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- In order to use the Form component the developer has to provide an onSubmit callback which takes the final submitted value and use the FormInput component as children of the Form.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+ # todos
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ - Form validation
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+with :yellow_heart: by [Ingrid do Rio Schulze](https://github.com/ingriddorioschulze)
