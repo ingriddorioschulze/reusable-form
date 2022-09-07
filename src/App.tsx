@@ -31,21 +31,21 @@ const App: React.FC = (): JSX.Element => {
             id="firstName"
             name="First Name"
             label="First Name: "
-            placeholder="Enter your First Name"
+            placeholder="Enter your first name"
           />
           <FormInput
             type="text"
             id="lastName"
             name="Last Name"
             label="Last Name: "
-            placeholder="Enter your Last Name"
+            placeholder="Enter your last name"
           />
           <FormInput
-            type="text"
-            id="city"
-            name="City"
-            label="City: "
-            placeholder="Enter your City"
+            type="email"
+            id="email"
+            name="email"
+            label="Email: "
+            placeholder="Enter your email"
           />
         </Form>
       </FormContainer>

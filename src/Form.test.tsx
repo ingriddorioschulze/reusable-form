@@ -15,36 +15,36 @@ describe("Form", () => {
           id="firstName"
           name="First Name"
           label="First Name"
-          placeholder="First Name"
+          placeholder="Enter your first name"
         />
         <FormInput
           type="text"
           id="lastName"
           name="Last Name"
           label="Last Name"
-          placeholder="Last Name"
+          placeholder="Enter your last name"
         />
         <FormInput
-          type="text"
-          id="city"
-          name="City"
-          label="City"
-          placeholder="City"
+          type="email"
+          id="email"
+          name="Email"
+          label="Email"
+          placeholder="Enter your email"
         />
       </Form>
     );
-    const inputFirstName = screen.getByPlaceholderText("First Name")
+    const inputFirstName = screen.getByPlaceholderText("Enter your first name")
     userEvent.type(inputFirstName,'Michael')
-    const inputLastName = screen.getByPlaceholderText("Last Name")
+    const inputLastName = screen.getByPlaceholderText("Enter your last name")
     userEvent.type(inputLastName,'Jackson')
-    const inputCity = screen.getByPlaceholderText("City")
-    userEvent.type(inputCity,'Neverland-Ranch')
+    const inputCity = screen.getByPlaceholderText("Enter your email")
+    userEvent.type(inputCity,'michael.jackson@email.com')
     
     fireEvent.click(screen.getByText("Submit"));
     expect(handleSubmit).toHaveBeenCalledWith({
       "First Name": "Michael",
       "Last Name": "Jackson",
-      "City": "Neverland-Ranch",
+      "Email": "michael.jackson@email.com",
     });
   });
 });
