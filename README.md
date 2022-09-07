@@ -1,6 +1,3 @@
-# about
-
-Reusable and generic form component.
 # technologies
 
 - React
